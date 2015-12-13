@@ -15,7 +15,15 @@ public:
 	M3X3Mat(const M3X3Mat& b);
 	~M3X3Mat();
 
-
+	void ReduceForm();
+	
+	// Exchange row i with row m
+	void ExchangeRows(int i, int m);
+	// Multiply every cell of a row i by a scalar x
+	void RowByScalar(int i, double x);
+	// Add to a row i an another row r by a coeficient coef
+	void AddRowToAnother(int i, int r, double coef);
+	
 	inline _3X3RowMat& operator[](int x)
 	{
 		return Rows[x];

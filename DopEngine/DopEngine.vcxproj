@@ -134,12 +134,16 @@
     <ClCompile Include="DopEngine.cpp" />
     <ClCompile Include="Math\3DVec.cpp" />
     <ClCompile Include="Math\3X3Mat.cpp" />
+    <ClCompile Include="Math\Mat.cpp" />
     <ClCompile Include="Math\_3X3RowMat.cpp" />
+    <ClCompile Include="Math\_RowMat.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Math\3DVec.h" />
     <ClInclude Include="Math\3X3Mat.h" />
+    <ClInclude Include="Math\Mat.h" />
     <ClInclude Include="Math\_3X3RowMat.h" />
+    <ClInclude Include="Math\_RowMat.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -30,6 +30,12 @@
     <ClCompile Include="Math\_3X3RowMat.cpp">
       <Filter>Source Files\Math</Filter>
     </ClCompile>
+    <ClCompile Include="Math\Mat.cpp">
+      <Filter>Source Files\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Math\_RowMat.cpp">
+      <Filter>Source Files\Math</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Math\3DVec.h">
@@ -39,6 +45,12 @@
       <Filter>Source Files\Math</Filter>
     </ClInclude>
     <ClInclude Include="Math\_3X3RowMat.h">
+      <Filter>Source Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Math\Mat.h">
+      <Filter>Source Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Math\_RowMat.h">
       <Filter>Source Files\Math</Filter>
     </ClInclude>
   </ItemGroup>

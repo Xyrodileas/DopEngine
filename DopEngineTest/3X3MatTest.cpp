@@ -103,21 +103,6 @@ namespace DopEngineTest
 				}
 			}
 		}
-		TEST_METHOD(M3X3MatTestMultiplyBy3X3Matrix)
-		{
-			M3X3Mat mat1 = M3X3Mat(1, 2, 3, 4, 5, 6, 7, 8, 9);
-			double expectedResults[9] = { 30, 36, 42, 66, 81, 96, 102, 126, 150 };
-			mat1 = mat1 * mat1;
-			int comptr = 0;
-			for (int i = 0; i < 3; i++)
-			{
-				for (int j = 0; j < 3; j++)
-				{
-					Assert::AreEqual(expectedResults[comptr], mat1[i][j]);
-					comptr++;
-				}
-			}
-		}
 
 		TEST_METHOD(M3X3MatTestDivideByScalar)
 		{
@@ -133,5 +118,42 @@ namespace DopEngineTest
 				}
 			}
 		}
+
+		TEST_METHOD(M3X3MatTestExchangeRows)
+		{
+			M3X3Mat mat1 = M3X3Mat(1, 2, 3, 4, 5, 6, 7, 8, 9);
+			mat1.ExchangeRows(0, 2);
+			mat1.ExchangeRows(1, 0);
+
+			double expectedResults[9] = { 4, 5, 6, 7, 8, 9, 1, 2, 3 };
+			int comptr = 0;
+			for (int i = 0; i < 3; i++)
+			{
+				for (int j = 0; j < 3; j++)
+				{
+					Assert::AreEqual(expectedResults[comptr], mat1[i][j]);
+					comptr++;
+				}
+			}
+		}
+
+		TEST_METHOD(M3X3MatTestAddRowToAnother)
+		{
+			M3X3Mat mat1 = M3X3Mat(1, 2, 3, 4, 5, 6, 7, 8, 9);
+			mat1.AddRowToAnother(0, 2, 3);
+			mat1.AddRowToAnother(2, 2, -1);
+
+			double expectedResults[9] = { 22, 26, 30, 4, 5, 6, 0, 0, 0 };
+			int comptr = 0;
+			for (int i = 0; i < 3; i++)
+			{
+				for (int j = 0; j < 3; j++)
+				{
+					Assert::AreEqual(expectedResults[comptr], mat1[i][j]);
+					comptr++;
+				}
+			}
+		}
+
 	};
 }

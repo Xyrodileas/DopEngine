@@ -33,9 +33,35 @@ M3X3Mat::M3X3Mat(const M3X3Mat& b)
 	memcpy(this->Rows, b.Rows, sizeof(b.Rows));
 }
 
+void M3X3Mat::ReduceForm()
+{
 
 
+}
 
+
+void M3X3Mat::AddRowToAnother(int i, int r, double coef)
+{
+	for (int j = 0; j < 3; j++)
+	{
+		Rows[i][j] = Rows[i][j] + Rows[r][j] * coef;
+	}
+}
+
+void M3X3Mat::ExchangeRows(int i, int n)
+{
+	_3X3RowMat tmp = Rows[i];
+	Rows[i] = Rows[n];
+	Rows[n] = tmp;
+}
+
+void M3X3Mat::RowByScalar(int i, double x)
+{
+	for (int j = 0; j < 3; j++)
+	{
+		Rows[i][j] = Rows[i][j] * x;
+	}
+}
 
 M3X3Mat::~M3X3Mat()
 {
